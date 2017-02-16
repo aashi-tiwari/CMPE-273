@@ -26,11 +26,11 @@ def main():  # It process Tcp connections as list of local address, remote addre
           frequencyCount.append(count)
           sortFC = sorted(frequencyCount,reverse = True) 
           tracker.append(d)
-    print( "PID","Local address", "Remote address", "Status")
+    print '"PID","Laddr", "Raddr", "Status"'
     for fc in sortFC:
        for gettc in tcpConns: # matching the Pid from two list and print sorted list
         if fc[1] == gettc[0]: 
-         print gettc
+         print '"%s","%s","%s","%s"' % (gettc[0],gettc[1],gettc[2],gettc[3])
              
 if __name__ == '__main__':
  main()
